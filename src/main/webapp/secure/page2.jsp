@@ -8,7 +8,6 @@
 </head>
 <body>
 <%="Hello"%>
-This is login success home page
-</body>
+This is page 2 , you have logged on as : site=<%= request.getContextPath() %> username=<%= request.getRemoteUser() %>
 </body>
 </html>
