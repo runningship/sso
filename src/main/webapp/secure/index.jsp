@@ -9,6 +9,8 @@
 <body>
 <%="Hello"%>
 This is login success home page
+<br/>
+you have logged on as : site=<%= request.getContextPath() %> username=<%= request.getRemoteUser() %>
 </body>
 </body>
 </html>
