@@ -15,7 +15,8 @@
         <property name="securityManager" ref="securityManager"/>  
         <!-- 设定角色的登录链接，这里为cas登录页面的链接可配置回调地址  -->  
         <property name="loginUrl" value="https://yexinzhou/cas/login?service=http://yexinzhou:8083/sso-test/shiro-cas" />  
-        <property name="successUrl" value="/secure/page1.jsp" />
+        <!-- 设置访问了没有权限的url的提示页面 -->
+        <property name="unauthorizedUrl" value="http://www.baidu.com"></property>
         <property name="filters">  
             <util:map>  
                 <!-- 添加casFilter到shiroFilter -->  
@@ -25,7 +26,8 @@
         <property name="filterChainDefinitions">  
             <value>
             	/shiro-cas = casFilter    
-                /secure/** = roles[ROLE_USER]  
+                /secure/** = roles[ROLE_USER]
+                /admin/** = roles[ROLE_ADMIN]
                 /** = anon  
             </value>  
         </property>  

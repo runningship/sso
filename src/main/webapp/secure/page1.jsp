@@ -1,3 +1,6 @@
+<%@page import="org.apache.shiro.subject.PrincipalCollection"%>
+<%@page import="org.apache.shiro.subject.Subject"%>
+<%@page import="org.apache.shiro.SecurityUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,5 +12,11 @@
 <body>
 <%="Hello"%>
 This is page 1 , you have logged on as : site=<%= request.getContextPath() %> username=<%= request.getRemoteUser() %>
+
+<%
+Subject subject = SecurityUtils.getSubject();  
+Object principal = subject.getPrincipal();  
+PrincipalCollection principals = subject.getPrincipals(); 
+%>
 </body>
 </html>
