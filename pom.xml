@@ -95,6 +95,12 @@
 		    <artifactId>cas-client-core</artifactId>
 		    <version>3.4.1</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.jasig.cas</groupId>
+		    <artifactId>cas-server-webapp-support</artifactId>
+		    <version>4.0.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
