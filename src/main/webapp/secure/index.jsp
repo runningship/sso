@@ -11,6 +11,9 @@
 This is login success home page
 <br/>
 you have logged on as : site=<%= request.getContextPath() %> username=<%= request.getRemoteUser() %>
+
+<div></div>
+<a href="/sso-test/logout">退出系统</a>
 </body>
 </body>
 </html>

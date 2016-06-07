@@ -27,7 +27,7 @@
         <property name="filterChainDefinitions">  
             <value>
             	/shiro-cas = casFilter    
-                /secure/** = roles[ROLE_USER]
+                /secure/** = roles[DEFAULT_USER]
                 /admin/** = roles[ROLE_ADMIN]
                 /logout = logout
                 /** = anon  
@@ -44,8 +44,8 @@
         <property name="failureUrl" value="/error.jsp"/>  
     </bean>  
       
-    <bean id="casRealm" class="org.apache.shiro.cas.CasRealm">  
-        <property name="defaultRoles" value="ROLE_USER"/>       
+    <bean id="casRealm" class="com.jumore.cas.shiro.UserRealm">  
+        <property name="defaultRoles" value="DEFAULT_USER"/>       
         <property name="casServerUrlPrefix" value="https://yexinzhou/cas"/>  
         <!-- 客户端的回调地址设置，必须和下面的shiro-cas过滤器拦截的地址一致 -->  
         <property name="casService" value="http://yexinzhou:8083/sso-test/shiro-cas"/>  
